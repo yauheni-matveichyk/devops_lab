@@ -21,8 +21,8 @@ else:
     i = 2
     while ost >= 10 and i > 1:
         for i in range(9, 0, -1):
-            k, l = delit(ost, i)
-            if l == 0:
+            k, ex = delit(ost, i)
+            if ex == 0:
                 ost = int(k)
                 sum += str(i)
                 break

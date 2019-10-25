@@ -9,7 +9,7 @@ def t(line):
 
 
 mo = t(line)
-if mo == None:
+if not mo:
     print("Error! Bad syntax.")
 else:
     if len(line) <= 100 and mo:
@@ -21,10 +21,17 @@ else:
             if oper == "/" and n2 == 0:
                 result = "NO"
             else:
-                def m(x, y): return x*y
-                def d(x, y): return x/y
-                def s(x, y): return x+y
-                def _(x, y): return x-y
+                def m(x, y):
+                    return x*y
+
+                def d(x, y):
+                    return x/y
+
+                def s(x, y):
+                    return x+y
+
+                def _(x, y):
+                    return x-y
                 do = {"*": m, "/": d, "+": s, "-": _}
                 result = "You're right" if n3 == do[oper](
                     n1, n2) else "Incorrect solution"
