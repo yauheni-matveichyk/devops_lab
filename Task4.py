@@ -12,6 +12,6 @@ for i in range(0, m):
 
 for i in list1:
     if i in d:
-        print " ".join(map(str, d[i]))
+        print(" ".join(map(str, d[i])))
     else:
         print -1
