@@ -5,6 +5,7 @@ from time import sleep
 import json
 from configs import settings
 
+
 class Snapshot:
     @property
     def make_snapshot(self):
@@ -20,7 +21,7 @@ class Snapshot:
                 text.write("NETWORK_USAGE" + str(psutil.net_io_counters(pernic=True)) + '\n')
         elif output_file == "json":
             with open("output.json", "a", encoding="utf-8,") as output_file:
-                json_data = {
+                    json_data = {
                         'SNAPSHOT': str(datetime.now()),
                         "CPU_USAGE": psutil.cpu_percent(interval=1),
                         "DISK_USAGE": psutil.disk_usage('/'),
@@ -33,9 +34,9 @@ class Snapshot:
         else:
             print('Choose correct output file extension in configs file')
 
+
 sys_obj = Snapshot()
 interval = int(settings['interval'])
 while True:
     sys_obj.make_snapshot
     sleep(interval)
-    
