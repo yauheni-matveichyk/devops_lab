@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import psutil
 from datetime import datetime
 from time import sleep
@@ -21,16 +20,15 @@ class Snapshot:
                 text.write("NETWORK_USAGE" + str(psutil.net_io_counters(pernic=True)) + '\n')
         elif output_file == "json":
             with open("output.json", "a", encoding="utf-8,") as output_file:
-                    json_data = {
-                        'SNAPSHOT': str(datetime.now()),
-                        "CPU_USAGE": psutil.cpu_percent(interval=1),
-                        "DISK_USAGE": psutil.disk_usage('/'),
-                        "VIRTUAL_MEM": psutil.virtual_memory()[2],
-                        "IO": psutil.Process().io_counters(),
-                        "NETWORK_USAGE": psutil.net_io_counters(pernic=True)}
+                json_data = {
+                    'SNAPSHOT': str(datetime.now()),
+                    "CPU_USAGE": psutil.cpu_percent(interval=1),
+                    "DISK_USAGE": psutil.disk_usage('/'),
+                    "VIRTUAL_MEM": psutil.virtual_memory()[2],
+                    "IO": psutil.Process().io_counters(),
+                    "NETWORK_USAGE": psutil.net_io_counters(pernic=True)}
 
                 json.dump(json_data, output_file, indent=4)
-
         else:
             print('Choose correct output file extension in configs file')
 
