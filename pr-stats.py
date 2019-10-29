@@ -14,7 +14,7 @@ parser.add_argument('--state', help='Time, Show PR, state, login',
 args = parser.parse_args()
 
 if args.version:
-    print '0.1_UNSTABLE'
+    print('0.1_UNSTABLE')
     quit()
 
 session = requests.Session()
