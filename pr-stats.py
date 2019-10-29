@@ -34,6 +34,6 @@ for item in tt:
         x = item['state']
         o = item['created_at']
         y = item['user']['login']
-        print o + ':' + a + ':' + x + ':' + y
+        print(o + ':' + a + ':' + x + ':' + y)
 
 session.close()
