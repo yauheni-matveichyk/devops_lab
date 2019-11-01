@@ -18,7 +18,6 @@ parser.add_argument('--week', help='Week number.', action='store_true')
 parser.add_argument('--day', help='On which day of the week',
                     action='store_true')
 parser.add_argument('--count', help='How many', action='store_true')
-parser.add_argument('--all', help='How many', action='store_true')
 args = parser.parse_args()
 
 if args.version:
@@ -61,41 +60,18 @@ for item in tt:
         x = item['state']
         o = item['created_at']
         y = item['user']['login']
-        print(':Created at:' + o + ':Title:' + a + ':State:' + x \
-            + ':Login:' + y)
+        print(':Created at:' + o + ':Title:' + a + ':State:' + x + ':Login:' + y)
 
     if args.week:
         a = item['title']
-        x = item['state']
-        o = item['created_at']
         y = item['user']['login']
         week = datetime.datetime.strptime(creation, '%Y-%m-%d').isocalendar()[1]
-        print('Number of week: {0}'.format(week) + ':Created at:' + o \
-            + ':Title:' + a + ':State:' + x + ':Login:' + y)
+        print('Number of week: {0}'.format(week) + ':Title:' + a + ':Login:' + y)
 
     if args.day:
         a = item['title']
-        x = item['state']
-        o = item['created_at']
         y = item['user']['login']
         day = datetime.datetime.strptime(creation, '%Y-%m-%d').strftime('%A')
-        print('On which day of the week: {0}'.format(day) \
-            + ':Created at:' + o + ':Title:' + a + ':State:' + x \
-            + ':Login:' + y)
-
-    if args.all:
-        a = item['title']
-        x = item['state']
-        o = item['created_at']
-        y = item['user']['login']
-        week = datetime.datetime.strptime(creation, '%Y-%m-%d').isocalendar()[1]
-        day = datetime.datetime.strptime(creation, '%Y-%m-%d').strftime('%A')
-
-        # print("On which day of the week: {0}".format(day))
-
-        print('Week number: {0}'.format(week) \
-            + ':On which day of the week: {0}'.format(day) \
-            + ':Created at:' + o + ':Title:' + a + ':State:' + x \
-            + ':Login:' + y)
+        print('On which day of the week: {0}'.format(day) + ':Title:' + a + ':Login:' + y)
 
 session.close()
