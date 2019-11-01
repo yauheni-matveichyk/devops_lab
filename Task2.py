@@ -1,4 +1,8 @@
-a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-c = set(a) & set(b)
-print(list(c))
+print("Please enter first row of numbers:")
+numa = (input())
+numa = numa.split()
+print("Please enter second row of numbers:")
+numb = (input())
+numb = numb.split()
+numc = set(numa) & set(numb)
+print(list(numc))

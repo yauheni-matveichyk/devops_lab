@@ -1,3 +1,10 @@
-class Solution:
-    def findComplement(self, num: int) -> int:
-        return num ^ int((len(bin(num)) - 2) * '1', 2)
+num = int(input("Enter numb: "))
+def bswitch(num):
+    c = 1
+
+    while num * 2 > c:
+        num = num ^ c
+        c = c << 1
+
+    print(num)
+bswitch(num)
