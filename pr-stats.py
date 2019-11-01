@@ -69,8 +69,7 @@ for item in tt:
         x = item['state']
         o = item['created_at']
         y = item['user']['login']
-        week = datetime.datetime.strptime(creation, '%Y-%m-%d'
-                ).isocalendar()[1]
+        week = datetime.datetime.strptime(creation, '%Y-%m-%d').isocalendar()[1]
         print 'Number of week: {0}'.format(week) + ':Created at:' + o \
             + ':Title:' + a + ':State:' + x + ':Login:' + y
 
@@ -79,8 +78,7 @@ for item in tt:
         x = item['state']
         o = item['created_at']
         y = item['user']['login']
-        day = datetime.datetime.strptime(creation, '%Y-%m-%d'
-                ).strftime('%A')
+        day = datetime.datetime.strptime(creation, '%Y-%m-%d').strftime('%A')
         print 'On which day of the week: {0}'.format(day) \
             + ':Created at:' + o + ':Title:' + a + ':State:' + x \
             + ':Login:' + y
@@ -90,10 +88,8 @@ for item in tt:
         x = item['state']
         o = item['created_at']
         y = item['user']['login']
-        week = datetime.datetime.strptime(creation, '%Y-%m-%d'
-                ).isocalendar()[1]
-        day = datetime.datetime.strptime(creation, '%Y-%m-%d'
-                ).strftime('%A')
+        week = datetime.datetime.strptime(creation, '%Y-%m-%d').isocalendar()[1]
+        day = datetime.datetime.strptime(creation, '%Y-%m-%d').strftime('%A')
 
         # print("On which day of the week: {0}".format(day))
 
