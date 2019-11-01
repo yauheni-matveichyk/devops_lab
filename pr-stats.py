@@ -22,7 +22,7 @@ parser.add_argument('--all', help='How many', action='store_true')
 args = parser.parse_args()
 
 if args.version:
-    print '0.2_UNSTABLE'
+    print('0.2_UNSTABLE')
     quit()
 
 session = requests.Session()
