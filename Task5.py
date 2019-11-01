@@ -1,4 +1,6 @@
 num = int(input("Enter numb: "))
+
+
 def bswitch(num):
     c = 1
 
@@ -7,4 +9,7 @@ def bswitch(num):
         c = c << 1
 
     print(num)
+
+
 bswitch(num)
+
