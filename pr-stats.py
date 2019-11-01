@@ -61,8 +61,8 @@ for item in tt:
         x = item['state']
         o = item['created_at']
         y = item['user']['login']
-        print ':Created at:' + o + ':Title:' + a + ':State:' + x \
-            + ':Login:' + y
+        print(':Created at:' + o + ':Title:' + a + ':State:' + x \
+            + ':Login:' + y)
 
     if args.week:
         a = item['title']
@@ -70,8 +70,8 @@ for item in tt:
         o = item['created_at']
         y = item['user']['login']
         week = datetime.datetime.strptime(creation, '%Y-%m-%d').isocalendar()[1]
-        print 'Number of week: {0}'.format(week) + ':Created at:' + o \
-            + ':Title:' + a + ':State:' + x + ':Login:' + y
+        print('Number of week: {0}'.format(week) + ':Created at:' + o \
+            + ':Title:' + a + ':State:' + x + ':Login:' + y)
 
     if args.day:
         a = item['title']
@@ -79,9 +79,9 @@ for item in tt:
         o = item['created_at']
         y = item['user']['login']
         day = datetime.datetime.strptime(creation, '%Y-%m-%d').strftime('%A')
-        print 'On which day of the week: {0}'.format(day) \
+        print('On which day of the week: {0}'.format(day) \
             + ':Created at:' + o + ':Title:' + a + ':State:' + x \
-            + ':Login:' + y
+            + ':Login:' + y)
 
     if args.all:
         a = item['title']
@@ -93,9 +93,9 @@ for item in tt:
 
         # print("On which day of the week: {0}".format(day))
 
-        print 'Week number: {0}'.format(week) \
+        print('Week number: {0}'.format(week) \
             + ':On which day of the week: {0}'.format(day) \
             + ':Created at:' + o + ':Title:' + a + ':State:' + x \
-            + ':Login:' + y
+            + ':Login:' + y)
 
 session.close()
