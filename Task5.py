@@ -12,4 +12,3 @@ def bswitch(num):
 
 
 bswitch(num)
-
